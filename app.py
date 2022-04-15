@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from importlib_metadata import method_cache
+from requests import request
 
 app = Flask(__name__)
 
@@ -7,7 +9,13 @@ app = Flask(__name__)
 def index() :
     return render_template('index.html')
 
-
+# methods 안적으면 GET이 디폴트.
+@app.route('/mnits', methods=['GET', 'POST'])
+def mnist() :
+    if request.method == 'GET' :
+        return render_template('mnistform.html')
+    else :
+        pass
 
 
 # __main__ 일 경우에만 run 실행

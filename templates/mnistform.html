@@ -1,0 +1,25 @@
+<!-- default.html을 상속 받아야 한다. -->
+{% extends 'default.html' %}
+
+<!-- default.html에 있는 block title에 띄우고 싶은 값(내용) 작성-->
+{% block title %}숫자 인식 폼{% endblock %}
+
+<!-- default.html에 있는 block content에 띄우고 싶은 값(내용) 작성-->
+{% block content %}
+<div class="container">
+    <p></p>
+    <h1>Mnist 숫자 인식 모델</h1>
+
+    <form>
+        <div>
+            <label for="formFileLg" class="form-label">Large file input example</label>
+            <input class="form-control form-control-lg" id="formFileLg" type="file">
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+
+    </form>
+
+
+
+</div>
+{% endblock %}
