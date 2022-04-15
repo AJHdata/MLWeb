@@ -7,16 +7,15 @@
 <!-- default.html에 있는 block content에 띄우고 싶은 값(내용) 작성-->
 {% block content %}
 <div class="container">
-    <p></p>
+    <p style="height: 100px;"></p>
     <h1>Mnist 숫자 인식 모델</h1>
 
-    <form>
+    <form action="/mnist", method="post", enctype="multipart/form-data">
         <div>
             <label for="formFileLg" class="form-label">Large file input example</label>
-            <input class="form-control form-control-lg" id="formFileLg" type="file">
+            <input class="form-control form-control-lg" id="formFileLg" name="mnistfile" type="file">
         </div>
-        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
-
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
 
